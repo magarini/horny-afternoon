@@ -2,15 +2,24 @@ var canvas;
 let teapot;
 let laptop;
 let sentonia;
+let mySound;
+let j=0;
+
 function preload() {
     teapot = loadModel('butterfly.obj', true);
     laptop = loadModel('Realistic_White_Female_Low_Poly.obj', true);
   sentonia=loadImage('IMG_9227.jpg');
     img = loadImage('glitter.jpg');
+
+    soundFormats('mp3', 'ogg');
+    mySound = loadSound('horniness.mp3');
+
+
   }
 
 function setup(){
     let canvas= createCanvas(windowWidth,windowHeight,WEBGL);
+    canvas.mousePressed(canvasPressed);
     textureMode(NORMAL);
 
   }
@@ -110,3 +119,12 @@ noStroke();
 
 sphere(random(100));
   }
+
+
+  function canvasPressed(){
+    j=j+1;
+    if (j<2){
+    mySound.setVolume(0.4);
+    mySound.loop();
+  }
+}
