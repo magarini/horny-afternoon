@@ -29,7 +29,7 @@ function setup(){
     clear();
     push();
     texture(sentonia);
-    sphere(windowWidth*4);
+    sphere(windowWidth*2);
     ambientLight(80); // white light
 
     pop();
