@@ -133,10 +133,14 @@ pop();
   }
 
 
-  function canvasPressed(){
+function canvasPressed(){
     j=j+1;
     if (j<2){
     mySound.setVolume(0.4);
     mySound.loop();
   }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
